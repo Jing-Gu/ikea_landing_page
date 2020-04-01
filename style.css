@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,700&display=swap");
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-main: #ffdb01;
+  --fs-l: 1.25rem; /* 20px */
+  --fs-m: 1.125rem; /* 18px */
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-family: "Montserrat", sans-serif;
+  display: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* width: 100%; */
+  height: 100%;
+  /* border: 1px solid blue; */
+}
+
+ul li {
+  padding: 0.5rem 1rem;
+}
+
+header {
+  position: absolute;
+  /* padding: 1rem 0; */
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* height: 20vh; */
+  background-color: #fff;
+}
+
+.logo {
+  width: 22%;
+  max-width: 150px;
+  display: grid;
+  place-content: center;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.hero {
+  background: url("images/ikea-bg.jpg");
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+
+section {
+  padding: 3em;
+}
+
+.sidebar,
+.inspiration {
+  font-size: 0.9rem;
+  line-height: 1.6rem;
+}
+
+.sidebar {
+  background-color: var(--clr-main);
+}
+
+.inspiration {
+  text-align: center;
+}
+
+.cta-btn {
+  padding: 0.9rem 2rem;
+  background-color: var(--clr-main);
+  border: none;
+  font-size: var(--fs-m);
+  position: absolute;
+  left: 0;
+  top: 70%;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.cta-btn:hover {
+  text-decoration: underline;
+}
+
+.read-btn {
+  color: #000;
+  /* border: 1px solid blue; */
+  display: flex;
+  align-items: center;
+}
+
+.read-btn i {
+  font-size: 1.8rem;
+  margin-right: 1rem;
+}
+
+.read-btn:hover a {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 1020px) {
+  header {
+    background-color: transparent;
+  }
+
+  .wrapper {
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+      "hero sidebar"
+      "hero inspiration";
+  }
+
+  .hero {
+    grid-area: hero;
+  }
+
+  .menu {
+    width: 30%;
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* .content-text {
+    border: 1px solid blue;
+  } */
+
+  .inspiration {
+    grid-area: inspiration;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0;
+  }
+
+  .inspiration img {
+    width: 50%;
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  html {
+    font-size: 21px;
+  }
+}
